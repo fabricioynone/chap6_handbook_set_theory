@@ -1,6 +1,6 @@
 ## Arquivo
 
-Minhas notas no estudo do capítulo 6 do livro Handbook of Set Theory vol. 2.
+Minhas notas no estudo pesadamente baseadas no capítulo 6 do livro Handbook of Set Theory vol. 2. Uma versão compilada pode ser acessada em [CardChar]( https://fabricioynone.github.io/chap6_handbook_set_theory/)
 
 ## Disclaimer
 
