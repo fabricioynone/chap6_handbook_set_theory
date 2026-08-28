@@ -1,0 +1,65 @@
+\chapter{Crescimento de Funções}
+\section{Dominating e Unbounding Numbers}
+Consideremos, neste capítulo, a ordenação $\leq^*$ em $^\omega \omega$ dada por $f \leq^* g \iff f(x) \leq g(x)$ para todos menos uma quantidade finita de $x \in \omega$. 
+
+Veremos que essa simples ordenação nos dará duas ordenações frequentemente usadas. 
+
+\begin{definition}
+    Uma família $\mathcal D \subseteq ^\omega\omega$ é dominante se para cada $f \in ^\omega \omega$ existe uma $g\in \mathcal D$ tal que $f \leq^* g$. 
+\end{definition}
+
+Assim, definimos $\frakd$:
+
+\begin{definition}
+    O dominating number $\frakd$ é a menor cardinalidade de qualquer família dominante. Equivalentemente,
+    $$
+    \frakd = \min\set{|\mathcal D|: \mathcal D\text{ é dominante}}
+    $$
+\end{definition}
+
+Analogamente, definamos unbounding number:
+
+\begin{definition}
+    Uma família $\mathcal B \subseteq ^\omega\omega$ é ilimitada se não existe nenhuma $f\in ^\omega\omega$ tal que $g\leq^* f$ para toda $g \in \mathcal B$.
+\end{definition}
+
+Assim,
+
+\begin{definition}
+    O bouding number $\frakb$, as vezes chamado de unbounding numeber, é a menor cardinalidade de qualquer família ilimitada. Equivalentemente
+    $$
+    \frakb = \min\set{|\mathcal B| : \mathcal B \text{ é ilimitada}}
+    $$
+    
+\end{definition}
+
+\begin{remark}
+    Se tivéssemos usado a ordenação $\leq$ em $^\omega\omega$ dada por $f\leq g \iff f(x) \leq g(x) \forall x \in \omega$, $\frakd$ não mudaria, já que todo $\mathcal D$ família dominante poderia ser adaptada para ser dominante no novo sentido. 
+
+    Porém, $\frakb$ cairia para $\A_0$, uma vez que as funcões constantes formam uma família ilimitada nessa nova ordenação.
+
+    Ambas, porém, continuariam as mesmas se trocássemos $^\omega\omega$ por $^\omega\R$ ou pelo conjunto de todas sequências de qualquer ordem linear de cofinalidade $\omega$. 
+\end{remark}
+
+Vejamos as restrições de $\frakb$ e $\frakd$ que são prováveis em $\zfc$:
+
+\begin{theorem}
+    $$\A_1 \leq \cf(b) = b \leq \cf(\frakd) \leq \frakd \leq \frakc$$
+\end{theorem}
+\begin{proof}
+    Para cada desigualdade:
+    \begin{itemize}
+        \item Para $\A_1 \leq \frakb$, provemos que para cada família de funções $(g_n : \omega \to \omega)_{n\in \omega}$, existe uma única $f$ tal que $f\geq^* g_n \forall n\in \omega$. 
+        
+        Basta considerar $f(x) = \max_{n\leq x}g_n(x)$. Vemos claramente que esta função satisfaz o que queremos e, assim, toda concluímos que toda família de $^\omega\omega$ é limitada, portanto, $\A_1 \geq \frakb$. 
+        \item Para $\frakb \leq \cf(\frakd)$, tomemos uma $\mathcal D$ família dominante de tamanho $\frakd$, que sabemos que existe por definição de $\frakd$. 
+        
+        Vamos decompor $\mathcal D$, então, numa união de $\cf(\frakd)$ subfamílias $\mathcal D_\xi$ tais que $|\mathcal D_\xi| < \frakd$. Então temos, para cada subfamília $\mathcal D_\xi$, uma $f_\xi$ limitante, pois tomamos $|\mathcal D_\xi| < \frakd$ e segue da definição de $\frakd$. Temos assim, que o conjunto $\mathcal A = \set{f_\xi : \xi < \cf(\frakd)}$ é ilimitado, pois, se existisse $f$ que dominasse $\mathcal A$, $f$ dominaria $\mathcal D$ que é ilimitada, absurdo. Além disso, $|\mathcal A| = \cf(\frakd)$. Assim, construímos uma família de tamanho $\cf(\frakb)$ ilimitada, concluímos, então, que $\frakb \leq \cf(\frakd)$. 
+
+        \item Para $\cf(\frakb) = \frakb$, notemos que é suficiente mostrar que existe um conjunto $\mathcal A$ ilimitado tal que $\mathcal A = \cf(\frakb)$. Seja $\mathcal B$ um conjunto ilimitado de cardinalidade $\frakb$, podemos, então, decompor $\mathcal B$ em $\cf(\frakb)$ subfamílias $\mathcal B_\xi$ tais que $|\mathcal B_\xi| < \frakb$. 
+        
+        Então, temos que $\mathcal B_\xi$ é limitada, tomemos uma $f_\xi$ limitante para cada $\mathcal B_\xi$. Temos então, $\set{f_\xi: \xi < \cf(\frakb)}$ é ilimitada de cardinalidade $\cf(\frakb)$.
+    \end{itemize}
+
+    As outras desigualdades são evidentes.
+\end{proof}

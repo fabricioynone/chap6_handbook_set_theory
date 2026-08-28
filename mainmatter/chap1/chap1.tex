@@ -1,1 +1,33 @@
 \chapter{Introdução}
+
+O primeiro teorema que vemos sobre uma característica cardinal do contínuo é o resultado clássico de Cantor que diz que $\frakc = 2^{\A_0} > \A_0$. Esse resultado é bem usado, principalmente, na análise, onde podemos encontrar alguns resultados que sobre conjuntos enumeráveis que não podem ser estendidos para $\frakc$, como, por exemplo:
+
+\begin{enumerate}[label=\roman*)]
+    \item Teorema da Categoria de Baire: Uma família enumerável de conjuntos que não são denso em nenhum ponto não podem cobrir a reta real.
+    \item Se uma família enumerável de conjuntos tem medida de Lebesque zero, então sua união também terá. 
+    \item Dada uma família enumerável de sequências de números reais, há uma única sequência tal que eventualmente domina cada sequência desta família. 
+    \item Sejam $S_k = (x_{k,n})_{n\in \omega}$ uma sequência de números reais limitada, então existe um conjunto infinito $A \subseteq \omega$ tal que todas as subsequências $S_k\upharpoonright_A = (x_{n.k})_{n\in A}$ convergem.
+\end{enumerate}
+
+Notemos que cada um desses resultados falham quando enfraquecemos a hipótese de ser enumerável para permitir a cardinalidade de $\frakc$. A saber: 
+
+\begin{enumerate}[label=\roman*)]
+    \item Tome $\set{\set{x}:x\in \R}$, é uma família não enumerável de conjuntos não densos em nenhum ponto que cobrem a reta real.
+    \item Tome a família anterior. 
+    \item Tome o $\R^\omega$, notemos que $|\R^\omega| = |\R|^{\A_0} = |2^{\A_0}|^{\A_0} = 2^{\A_0 \cdot \A_0} = 2^{\A_0}$, tal família não-enumerável de sequências claramente não possui uma sequência que eventualmente a domina. 
+    \item Tome $\set{0,1}^\omega$, nenhuma subsequência converge.
+\end{enumerate}
+
+Assim, é natural perguntar se existem cardinais maiores que $\A_0$ tais que essas hipóteses podem ser enfraquecidas para eles e, se existirem, quais são eles. Claro, se a Hipótese do Contínuo (CH) valer, então esses resultados já falham para $\A_1$. 
+
+Se assumirmos que CH é falsa, porém, o que acontece com os cardinais entre $\A_0$ e $\frakc$? Não é nem um pouco evidente o que aconteceria se substituíssemos $\A_0$ por algum desses cardinais e, de fato, não é nem decidível em $\zfc$. Por exemplo, é consistente que $\frakc = \A_2$ e que os resultados anteriores continuam sendo verdades para $\A_1$, mas é consistente que falha para $\A_1$. 
+
+Apesar dessa indecidibilidade ser algo que parece nos impedir de falar qualquer coisa útil ou interessante sobre esses resultados para cardinais maiores, há algumas conexões muito interessante entre esses diferentes resultados. A título de exemplo, se o resultado sobre a medida de Lebesque continuar sendo verdadeira para um cardinal $\kappa$, então também será o teorema das categorias de Baire e sobre a eventual dominação. 
+
+Um dos maiores objetivos da teoria das características cardinais do contínuo é entender as relações desse tipo, seja provando implicações como as provadas anteriormente ou sua indecidibilidade na $\zfc$. As características cardinais são, portanto, o menor cardinal tal que para o qual vários resultados válidos, para $\A_0$, são falsos. 
+
+\section{Noções e Notações}
+
+Frequentemente, contínuo refere-se a reta real $\R$ ou a um intervalo como $[0,1] \subseteq \R$ visto como um espaço topológico. É muito comum na Teoria dos Conjuntos, porém, usar essa expressão para espaços como $^\omega 2, ^\omega \omega$ e $[\omega]^\omega$, no qual $^\omega X$ significa sequências de tamanho $\omega$ de elementos de $X$, usualmente identificados, também, por $\pset(x)$. Já $[\omega]^\omega$ é o subespaço de conjuntos infinitos de $\mathcal P(\omega)$.
+
+Esses subespaços são, para muitos propósitos, equivalentes, uma vez que se tornam homeomorficos depois da remoção de certos conjuntos contáveis.
