@@ -63,3 +63,31 @@ Vejamos as restrições de $\frakb$ e $\frakd$ que são prováveis em $\zfc$:
 
     As outras desigualdades são evidentes.
 \end{proof}
+
+Para ver que $\frakb < \frakd$ é consistente, o modelo original de Cohen para a negação de CH tem $\frakb = \A_1$ e $\frakd = \frakc$
+
+Para $\frakb = \frakd$, temos a seguinte characterização:
+
+\begin{theorem}
+    $\frakb = \frakd$ se, e somente se, existe uma escala em $^\omega\omega$, isto é, existe uma família dominante bem ordenada por $\leq^*$.  
+\end{theorem}
+\begin{proof}
+    Suponha $\frakb = \frakd$. Tomemos $\mathcal D = \set{f_\xi:\xi < \frakb}$ uma família dominante de tamanho $\frakb$, definamos, então, uma escala $\set{g_\xi:\xi<\frakb}$ tomando cada $g_\xi$ como uma sequência que domina $f_\eta$ para todo $\eta\leq \xi$. Notemos que podemos fazer isso, pois estamos considerando a cada iteração, menos de $\frakb$ funções, então o subconjunto é limitado. O conjunto que construímos é uma família dominante e bem ordenada por $\leq^*$. 
+    
+    Reciprocamente, suponha que exista uma escala. Provemos que $\frakb = \frakd$. Tomemos uma família de ilimitados $\mathcal B$ de tamanho $\frakb$. Podemos aumentar cada elemento de $\mathcal B$ o quanto for necessário, arranjando $\mathcal B$ para ser um subconjunto da escala que tomamos. Como $\mathcal B$ é ilimitada, então tem de ser cofinal na boa ordenação $\leq^*$ e, portanto, é uma família dominante.
+\end{proof}
+
+\section{Addivity, Covering Number, Uniformity and Cofiniality}
+
+Definamos $\add,\cov, \non, \cof$. 
+
+\begin{definition}
+    Seja $\mathcal I$ um ideal próprio de subconjuntos de um conjunto $X$ contendo todos singletons de $X$. Definimos:
+
+    \begin{itemize}
+        \item A aditividade de $\mathcal I$, $\add(\mathcal I)$, como o menor número de conjuntos de $\mathcal I$ com união fora de $\mathcal I$. 
+        \item O número de cobertura (ou covering number) de $\mathcal I$, $\cov(\mathcal I)$, como o menor número de conjuntos $\mathcal I$ com união $X$, i.e., que cobre $X$. 
+        \item A uniformidade de $\mathcal I$, $\non(\mathcal I)$, como a menor cardinalidade de qualquer subconjunto de $X$ que não está em $\mathcal I$. 
+        \item A cofinalidade de $\mathcal I$, $\cof(\mathcal I)$, a menor cardinalidade de qualquer subconjuto $\mathcal B$ tal que todo elemento de $\mathcal I$ é um subconjunto de um elemento de $\mathcal B$. Tal conjunto é chamado de base para $\mathcal I$. 
+    \end{itemize}
+\end{definition}
