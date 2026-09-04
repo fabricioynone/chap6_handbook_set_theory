@@ -55,7 +55,7 @@ Vejamos as restrições de $\frakb$ e $\frakd$ que são prováveis em $\zfc$:
         \item Para $\frakb \leq \cf(\frakd)$, tomemos uma $\mathcal D$ família dominante de tamanho $\frakd$, que sabemos que existe por definição de $\frakd$. 
         
         Vamos decompor $\mathcal D$, então, numa união de $\cf(\frakd)$ subfamílias $\mathcal D_\xi$ tais que $|\mathcal D_\xi| < \frakd$. Então temos, para cada subfamília $\mathcal D_\xi$, uma $f_\xi$ limitante, pois tomamos $|\mathcal D_\xi| < \frakd$ e segue da definição de $\frakd$. Temos assim, que o conjunto $\mathcal A = \set{f_\xi : \xi < \cf(\frakd)}$ é ilimitado, pois, se existisse $f$ que dominasse $\mathcal A$, $f$ dominaria $\mathcal D$ que é ilimitada, absurdo. Além disso, $|\mathcal A| = \cf(\frakd)$. Assim, construímos uma família de tamanho $\cf(\frakb)$ ilimitada, concluímos, então, que $\frakb \leq \cf(\frakd)$. 
-
+        \pending
         \item Para $\cf(\frakb) = \frakb$, notemos que é suficiente mostrar que existe um conjunto $\mathcal A$ ilimitado tal que $\mathcal A = \cf(\frakb)$. Seja $\mathcal B$ um conjunto ilimitado de cardinalidade $\frakb$, podemos, então, decompor $\mathcal B$ em $\cf(\frakb)$ subfamílias $\mathcal B_\xi$ tais que $|\mathcal B_\xi| < \frakb$. 
         
         Então, temos que $\mathcal B_\xi$ é limitada, tomemos uma $f_\xi$ limitante para cada $\mathcal B_\xi$. Temos então, $\set{f_\xi: \xi < \cf(\frakb)}$ é ilimitada de cardinalidade $\cf(\frakb)$.
@@ -88,6 +88,56 @@ Definamos $\add,\cov, \non, \cof$.
         \item A aditividade de $\mathcal I$, $\add(\mathcal I)$, como o menor número de conjuntos de $\mathcal I$ com união fora de $\mathcal I$. 
         \item O número de cobertura (ou covering number) de $\mathcal I$, $\cov(\mathcal I)$, como o menor número de conjuntos $\mathcal I$ com união $X$, i.e., que cobre $X$. 
         \item A uniformidade de $\mathcal I$, $\non(\mathcal I)$, como a menor cardinalidade de qualquer subconjunto de $X$ que não está em $\mathcal I$. 
-        \item A cofinalidade de $\mathcal I$, $\cof(\mathcal I)$, a menor cardinalidade de qualquer subconjuto $\mathcal B$ tal que todo elemento de $\mathcal I$ é um subconjunto de um elemento de $\mathcal B$. Tal conjunto é chamado de base para $\mathcal I$. 
+        \item A cofinalidade de $\mathcal I$, $\cof(\mathcal I)$, a menor cardinalidade de qualquer subconjunto $\mathcal B$ tal que todo elemento de $\mathcal I$ é um subconjunto de um elemento de $\mathcal B$. Tal conjunto é chamado de base para $\mathcal I$. 
     \end{itemize}
 \end{definition}
+
+Podemos ver, claramente, que $\cov(\mathcal I)$ e $\non(\mathcal I)$ são maiores ou iguais a $\add(\mathcal I)$.
+
+\pending sobre cofinalidade. 
+
+Usaremos, neste capítulo, a $\mathcal I$ sempre sendo um $\sigma$-ideal, então, sua aditividade e, pelo discutido anteriormente, seu $\cov$ e $\non$ serão não-enumeráveis. 
+
+Um ideal relevante para ser apresentado nessa seção é o $\sigma$-ideal $\mathcal K_\sigma$ gerado por subconjuntos compactos de $^\omega \omega$, isto é, o ideal de conjuntos cobertos por um número contável de subconjuntos compactos. Temos:
+
+\begin{theorem}
+    $\add(\mathcal K_\sigma) = \non(\mathcal K_\sigma) = \frakb$ e $\cov(\mathcal K_\sigma) = \cof(\mathcal K_\sigma) = \frakd$
+\end{theorem}
+\begin{proof}
+    \pending
+\end{proof}
+
+Lembrando que $^\omega\omega$ é homeomorfo, via expansões de frações contínuas, para o espaço de números irracionais com a topologia de subespaço de $\R$, vemos que o teorema continua válido se interpretarmos $\mathcal K_\sigma$ como o $\sigma$-ideal gerado pelos compactos de $\R\setminus \Q$. 
+
+Em particular, então, $\frakd$ é caracterizado por ser o número mínimo de conjuntos compactos cuja união é $\R\setminus\Q$. Aqui, a escolha de contínuo é importante, uma vez que para $^\omega 2, [0,1]$ e $\R$ são $1,1$ e $\A_0$, respectivamente. 
+
+Outra forma de olhar para a ordenação $\leq^*$ e os cardinais $\frakb$ e $\frakd$ envolve:
+
+\begin{definition}
+    Uma partição por intervalo é uma partição de $\omega$ em (infinitos) intervalos finitos $I_n$ tal que $n\in\omega$.
+
+    Chamamos de IP o conjunto de todas partições por intervalos. 
+\end{definition}
+
+Assumimos sempre que os intervalos estão numerados na ordem dos naturais, então, se $i_n$ é o extremo esquerdo de $I_n$, temos que $i_0 = 0$ e $I_n = [i_n, i_{n+1})$. Para a noção de dominação:
+
+\begin{definition}
+    Dizemos que uma partição ${I_n : n\in\omega}$ domina outra partição ${J_n : n\in\omega}$ se $\forall^\infty n \exists k (J_k \subseteq I_n)$. 
+\end{definition}
+
+Com isso, podemos enunciar e provar:
+
+\begin{theorem}
+    $\frakd$ é a menor cardinalidade de qualquer família dominante de partições por intervalos.
+    
+    $\frakb$ é a menor cardinalidade de qualquer família de partições por intervalos que não são todas dominadas por uma única partição por intervalo.
+\end{theorem}
+\begin{proof}
+    Suponha que temos uma família $\mathcal F$ de partições por intervalos dominando todas as partições por intervalos, então, para cada $\set{I_n : I_n = [i_n, i_{n+1})} \in \mathcal F$, associemos $f: \omega\to\omega$ por $f(x) = i_{n+2} -1$ tal que $x\in I_n$. 
+
+    Mostremos, agora, que essas funções formam uma família dominante, então $\frakd \leq |\mathcal F|$. Dado $g\in ^\omega\omega$, $f$ dominante é obtido formando $\set{J_n = [j_n, j_{n+1}) : n\in\omega}$ tal que $x\leq j_n$ implica que $g(x) < j_{n+1}$. Podemos construir isso indutivamente escolhendo $j_{n+1} = \max_{x\leq j_n}{g(x)} + 2$. 
+
+    Tome, agora, $\set{I_n : n\in \omega}\in \mathcal F$ tal que domina $\set{J_n : n\in\omega}$ e seja $f$ a função associada a ${I_n : n\in \omega}$. Para ver que $g(x)\leq f(x)$ para todo $x\in \omega$ suficientemente grande, tome $n$ tal que $x\in I_n$ e tome $k$ tal que $J_k \subseteq I_{n+1}$, que sabemos que existe, pois estamos tomando $x$ suficientemente grande para isso. Assim, como $x\leq j_k$, temos que $g(x)\leq j_{k+1} -1 \leq i_{n+2} - 1 = f(x)$. Que completa a prova que $\frakd \leq |\mathcal F|$. 
+    
+    Agora, para mostrar que existe uma família $\mathcal D$ de partição por intervalo dominante de cardinalidade $\frakd$ em $^\omega\omega$, e associamos para cada $g\in \mathcal D$ uma partição por intervalo $\set{J_n : n\in \omega}$, como fizemos anteriormente. Podemos, então, agora, mostrar que ele domina todas as partições de intervalo, seja $\set{I_n : n\in\omega}$ uma partição arbitrária, associamos $f$ para $\set{I_n : n\in\omega}$ como fizemos anteriormente e, então, tome $g\in \mathcal D$ tal que $g\geq^* f$. Para $n$ grande suficiente, $f(j_n) \leq g(j_n) \leq j_{n+1} - 1$. Pela definição de $f$, o próximo $I_k$ depois do que contém $j_n$ cai inteiramente em $J_n$.
+\end{proof}

@@ -1,0 +1,151 @@
+\chapter[Splitting, Tower and Distributivity]{Splitting Number, Tower Number e Distributivity Number}
+
+\section{Splitting Number}
+
+\begin{definition}
+    Dizemos que um conjunto $X\subseteq \omega$ divide um conjunto infinito $Y\subseteq \omega$ se ambos $Y\cap X$ e $Y\setminus X$ são infinitos.
+\end{definition}
+
+Naturalmente, então
+
+\begin{definition}
+    Uma splitting family $\mathcal S$ é uma família de subconjuntos de $\omega$ tal que cada $Y\subseteq \omega$ infinito é divido por algum conjunto em $\mathcal S$.  
+\end{definition}
+
+Assim,
+
+\begin{definition}
+    O splitting number $\fraks$ é a menor cardinalidade de qualquer splitting family.
+\end{definition}
+
+Fatos importantes:
+
+\begin{theorem}
+    $\fraks$ é a cardinalidade mínima de qualquer família de sequências limitadas $S_\xi = \langle x_{\xi,n}\rangle_{n\in\omega}$ de números reais tais que para nenhum $Y\subseteq \omega$ as sequências restritas $S_\xi|_Y$ convergem. 
+    
+    Analogamente, o mesmo é verdadeiro se construirmos sequências consistindo de $0$s e $1$s.
+\end{theorem}
+
+\begin{theorem}
+    $\fraks \leq \frakd$
+\end{theorem}
+
+\begin{definition}
+    Um conjunto $H\subseteq \omega$ é homogêneo para uma função $f: [\omega]^n \to k$ (isto é, uma partição de $[\omega]^n$ em $k$ pedaços) se $f$ é constante em $[H]^n$.
+
+    Dizemos que $H$ é quase homogêneo se existe um conjunto finito $F$ tal que $H\setminus F$ é homogêneo para $f$.
+\end{definition}
+
+\begin{definition}
+    $\frakpar_n$ é a menor cardinalidade de qualquer família de partições de $[\omega]^\omega$ em duas partes tais que nenhum conjunto infinito é quase homogêneo para todos eles simultaneamente.
+\end{definition}
+
+\begin{theorem}
+    Para todos inteiros $n \geq 2$, $\frakpar_n = \min\set{\frakb,\fraks}$
+\end{theorem}
+
+\section{Tower and Distributivity Number}
+\subsection{Tower Number}
+\begin{definition}
+    Uma pseudointerseção de uma família $\mathcal F$ de conjuntos é um conjunto infinito $A$ tal que $A \subseteq^* B$ para todo $B \in \mathcal F$
+\end{definition}
+
+\begin{definition}
+    Uma torre é uma sequência indexada por ordinal $\langle T_\alpha: \alpha < \lambda \rangle$ tal que
+    \begin{enumerate}[label=\roman*)]
+        \item Cada $T_\alpha$ é um subconjunto infinito de $\omega$;
+        \item $T_\beta \subseteq^* T_\alpha$ para $\beta < \alpha < \lambda$;
+        \item $\set{T_\alpha : \alpha < \lambda}$ não possui nenhuma pseudointerseção.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    O tower number $\frakt$ é o menor $\lambda$ tal que é o comprimento de uma torre.
+\end{definition}
+
+\begin{proposition}
+    $\frakt$ é um cardinal regular não-enumerável
+\end{proposition}
+\begin{proof}
+    A regularidade segue facilmente do fato de que qualquer subsequência cofinal de torre é uma torre. 
+    
+    Para a não-enumerabilidade, suponha que exista uma torre $\langle T_n : n\in \omega\rangle$, então, tome para cada $n\in\omega$, $x_n\in \bigcap_{i\leq n} T_i$ distintos para cada iteração. Teríamos, então, que $X = \set{x_n : n\in \omega}$ uma pseudointerseção, absurdo. Notemos que podemos fazer isso, pois todos os $T_i$ são infinitos e estamos, a cada iteração, tomando interseções finitas.  
+\end{proof}
+
+\subsection{Distributivity Number}
+
+\begin{definition}
+    Uma família $\mathcal D \subseteq [\omega]^\omega$ é aberto se é fechada sobre quase subconjuntos. 
+\end{definition}
+
+\begin{definition}
+    Uma família $\mathcal D \subseteq [\omega]^\omega$ é denso se todo $X\in [\omega]^\omega$ tem um subconjunto em $\mathcal D$.
+\end{definition}
+
+\begin{definition}
+    O distributivity number $\frakh$ é o menor tamanho de qualquer família densa e aberta com interseção vazia.
+\end{definition}
+
+\begin{remark}
+    Os conjuntos abertos definidos constituem uma topologia em $[\omega]^\omega$, a chamada lower topology. Além disso, a definição de denso que definimos também coincide com os densos desta topologia se $\mathcal D$ for fechado sobre modificações finitas.
+
+    Definições análogas podem ser feitas para qualquer pré-ordem.
+\end{remark}
+
+\begin{proposition}
+    A interseção de menos que $\frakh$ família de denso abertos é denso aberto e, assim, $\frakh$ é cardinal regular.
+\end{proposition}
+\begin{proof}
+    Considere $\lambda < \frakh$ $\langle \mathcal D_\alpha : \alpha < \lambda \rangle$ uma família de densos abertos. Notemos que a interseção é aberta, pois se $A\in \bigcap \mathcal D_\alpha$ e $B\subseteq A$, temos que $A \in \mathcal D_\alpha \forall \alpha < \lambda$ e, por cada $\mathcal D_\alpha$ ser aberto, sabemos que $B\in \mathcal D_\alpha \forall \alpha < \lambda$.
+    
+    Resta provar que densidade. Considere, então, $X$ um subconjunto infinito de $\omega$ e considere as famílias $\left\langle \mathcal D'_\alpha = \set{Y\in \mathcal D_\alpha : Y\subseteq X} : \alpha < \lambda \right\rangle$. Notemos que temos menos que $\frakh$ conjuntos nessa família, assim, a interseção não é vazia e existe $Y \in \bigcap \mathcal D'_\alpha$, logo, $Y\in \bigcap \mathcal D_\alpha$ e $Y \subseteq X$.
+
+    Segue, então, que qualquer família de denso abertos de tamanho $\frakh$ com interseção vazia não aceita subfamília cofinal, logo, $\frakh$ é cardinal regular. 
+\end{proof}
+
+A definição de $\frakt$ é sobre afinar infinitos subconjuntos de $\omega$ passando repetidamente 
+
+\subsection{Relações entre $\frakt$, $\frakh$ e $\fraks$}
+
+\begin{proposition}
+    $\frakt \leq \frakh$
+\end{proposition}
+\begin{proof}
+    Suponha que $\kappa < \frakt$ e tome $\langle D_\alpha : \alpha < \kappa \rangle$ família de densos abertos, queremos mostrar que existe um conjunto na interseção. 
+
+    Definamos, então, uma sequência quase decrescente $\langle T_\alpha : \alpha < \kappa \rangle$ pela seguinte recursão: 
+    \begin{itemize}
+        \item $T_0 = \omega$;
+        \item $T_{\alpha + 1}$ é qualquer subconjunto de $T_\alpha$ que esteja em $\mathcal D_\alpha$, notemos que a recursão é possível porque $\mathcal D_\alpha$ é denso;
+        \item Se $\lambda \leq \kappa$ é limite, então defina $T_\lambda$ como sendo qualquer pseudointerseção de ${T_\alpha : \alpha < \lambda}$. Podemos fazer isso, pois, como $\kappa < \frakt$, ${T_\alpha : \alpha < \lambda}$ não pode ser uma torre e que as outras duas condições, i) e ii) são satisfeitas.
+    \end{itemize}
+    Como $T_\kappa \subseteq^* T_{\alpha + 1}$ para todo $\alpha < \kappa$, temos, graças a ser aberto, que $T_\kappa$ está na família de todas famílias $\mathcal D_\alpha$. 
+
+    Assim, uma família de densos abertos de tamanho menor que $\frakt$ não pode ter interseção vazia e, assim, concluímos que $\frakt \leq \frakh$
+\end{proof}
+
+É consistente na $\zfc$ que podemos ter $\frakt < \frakh$, Dordal construiu um modelo onde $\frakh = \A_2 = \frakc$, mas não há torres de tamanho $\omega_2$.
+
+\pending comentário sobre conjuntos que são upper bounds para $\frakd$
+
+Para ver alguns upper bounds para $\frakh$, usaremos:
+
+\begin{theorem} [de Ramsey]
+    Para todo $r\in \omega$ e toda coloração
+    $$
+    f: [\omega]^2 \to r
+    $$
+    existe um conjunto infinito $H \subseteq \omega$ tal que $f$ é constante em $[H]^2$
+\end{theorem}
+
+Com isso, podemos provar:
+
+\begin{theorem}
+    $\frakh \leq \frakb, \fraks$
+\end{theorem}
+\begin{proof}
+    Pelo teorema que expomos anteriormente, basta provar que $\frakh \leq \frakpar_2$. Tome então $\kappa < \frakh$ partições $\langle f_\alpha: [\omega]^2 \to 2 : \alpha < \kappa \rangle$ e mostremos que existe um conjunto quase homogêneo para essa família de partições. 
+
+    Para cada $\alpha < \kappa$, tome $\mathcal D_\alpha \subseteq [\omega]^\omega$ uma família de todos subconjuntos infinitos de $\omega$ tal que sejam quase homogêneos para $f_\alpha$, sabemos que $D_\alpha$ é não vazio pelo teorema de Ramsey, e além disso, é facilmente visualizável que $\mathcal D_\alpha$ é aberto e, é denso, pois dado $X \subseteq [\omega]^\omega$ temos que $f_\alpha|_{[X]^2}$, por $X$ ser infinito enumerável, o teorema de Ramsey garante um subconjunto $Y$ homogêneo para $f_\alpha$, logo, $Y \subseteq X$ e $Y\in \mathcal D_\alpha$. 
+\end{proof}
+
