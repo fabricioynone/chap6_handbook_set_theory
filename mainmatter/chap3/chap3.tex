@@ -149,3 +149,47 @@ Com isso, podemos provar:
     Para cada $\alpha < \kappa$, tome $\mathcal D_\alpha \subseteq [\omega]^\omega$ uma família de todos subconjuntos infinitos de $\omega$ tal que sejam quase homogêneos para $f_\alpha$, sabemos que $D_\alpha$ é não vazio pelo teorema de Ramsey, e além disso, é facilmente visualizável que $\mathcal D_\alpha$ é aberto e, é denso, pois dado $X \subseteq [\omega]^\omega$ temos que $f_\alpha|_{[X]^2}$, por $X$ ser infinito enumerável, o teorema de Ramsey garante um subconjunto $Y$ homogêneo para $f_\alpha$, logo, $Y \subseteq X$ e $Y\in \mathcal D_\alpha$. 
 \end{proof}
 
+O teorema anterior vale, também, para $\frakt$, porém, no caso de $\frakt$, podemos melhorar o upper bound para $\add(\mathcal B)$. Para provar isso, precisamos:
+
+\begin{lemma}
+    Seja $\lambda < \frakt$ e $\langle T_\alpha : \alpha < \lambda \rangle$ uma sequência quase decrescente de subconjuntos infinitos de $\Q$. 
+
+    Então, existe um denso $X \subseteq \Q$ que está quase incluso em todo $T_\alpha$.
+\end{lemma}
+\begin{proof}
+    Para cada $I$ um intervalo de extremos racionais, consideremos a sequência quase decrescente $\langle T_\alpha\cap I : \alpha < \lambda \rangle$ de subconjuntos infinitos de $I$. 
+
+    Como $\lambda < \frakt$, não é uma torre e, por ser uma sequência quase decrescente de subconjuntos infinitos de $\Q$, sabemos que tem de haver um $Y_I \subseteq I$ incluso em todos $T_\alpha$. \pending
+
+    Enumeremos, então, $Y_I$ como uma $\omega$-sequência $(y_{I,n})$. Podemos fazer isso, pois $\Q$ é enumerável. Assim, para cada $\alpha < \lambda$, definamos $f_\alpha(I) \in \omega$ como sendo um upper bound para os finitos $n$ tais que $y_{I,n}\notin T_\alpha$\dots
+    
+    Como $\lambda < \frakt\leq \frakb$ e o conjuntos dos intervalos $I$ é contável, tome 
+    $$g:\set{I \subseteq \R : I \text{ é intervalo de extremos racioanis}} \to \omega$$
+    a função que domina $(f_\alpha)_{\alpha < \lambda}$. Assim, $X = \bigcup_{I} \set{y_{I,n}: n > g(I)}$ é denso, pois contém quase todos $Y_I$ e é quase incluso em cada $T_\alpha$, pois $X\setminus T_\alpha$ é um conjunto finito de elementos duma quantidade finita de $Y_I$ tais que $g(I) < f_\alpha(I)$. 
+\end{proof}
+
+Como prometido, 
+
+\begin{theorem}
+    $\frakt \leq \add(\mathcal B)$
+\end{theorem}
+\begin{proof}
+    Sabemos que se $\kappa < \frakt$, a interseção de qualquer $\kappa$ abertos densos $G_\alpha \subseteq \R$ é comagro. 
+
+    Assim, definamos uma sequência quase decrescente $\langle T_\alpha : \alpha < \kappa \rangle$ de abertos densos da seguinte forma:
+
+    \begin{itemize}
+        \item $T_0 = \Q$;
+        \item $T_{\alpha + 1} = T_\alpha\cap G_\alpha$, notemos que é denso, pois é interseção de densos e um deles é aberto;
+        \item Se $\alpha$ é limite, então, pelo lema anterior, $X\subseteq \Q$ denso que está incluso em todo $T_\lambda$ para $\lambda < \alpha$.
+    \end{itemize}
+
+    Notemos que, como $T_\kappa \subseteq^* T_{\alpha + 1}$ para todo $\alpha < \kappa$, temos que $T_\kappa \subseteq^* G_\alpha$ para todo $\alpha < \kappa$. Assim, para cada $t\in T_\kappa$ e $\alpha < \kappa$, defina $f_\alpha(t) \in \omega$ como sendo algum $n$ tal que $\left(t-\frac{1}{n}, t+\frac{1}{n}\right) \subseteq G_\alpha$ se $t\in G_\alpha$ e $0$, caso contrário.
+
+    Como $T_\kappa$ é enumerável e $\kappa < \frakt \leq \frakb$, existe uma $g:T_\kappa \to \omega$ dominando todas $f_\alpha$. Assim, para cada $F\subseteq T_\kappa$ infinito, tome 
+    $$
+        U_F = \bigcup_{t\in T_\kappa\setminus F}\left(t- \frac{1}{g(n)}, t +\frac{1}{g(n)}\right)
+    $$
+    
+    Assim, $U_F$ é denso, pois quase inclui $T_\kappa$ e é obviamente aberto. Como existe apenas uma quantidade contável de $F$, $\bigcap_F U_F$ é comagro. Basta apenas provar, agora, que essa interseção está inclusa na interseção das $G_\alpha$. De fato, cada $G_\alpha$ inclui uma das $U_F$ dada, então, dado $\alpha,$ basta tomar $F$ que contendo os finitos elementos $t\in T_\kappa\setminus G_\alpha$ e os finitos $t$ tal que $g(t) < f_\alpha(t)$.
+\end{proof}

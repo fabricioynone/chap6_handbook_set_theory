@@ -105,6 +105,15 @@ Um ideal relevante para ser apresentado nessa seção é o $\sigma$-ideal $\math
 \end{theorem}
 \begin{proof}
     \pending
+    Para provar que $\add(\mathcal K_\sigma) = \non(\mathcal K_\sigma) = \frakb$, uma vez que sabemos que $\add(\mathcal K_\sigma) \leq \non(\mathcal K_\sigma)$, verifiquemos que $\non(\mathcal K_\sigma) \leq \frakb$. Tomemos, então, $A \subseteq\, ^\omega\omega$ unbounded de tamanho $\frakb$, queremos mostrar que $A \notin \mathcal K_\sigma$. Suponha que $A\in \mathcal K_\sigma$, então, $A \subseteq \set{{f\in ^\omega\omega : f \leq^* g}}$ para alguma $g\in ^\omega\omega$, absurdo, pois $A$ é unbounded. 
+
+    Agora, notemos que basta mostrar que $\frakb \leq \add(\mathcal K_\sigma)$. Assim, tome $A \subseteq \mathcal K_\sigma$ de tamanho $\add(\mathcal K_\sigma)$ tal que $\bigcup A \notin \mathcal K_\sigma$. Sabemos que, para todo $B\in A$, existe $g_B\in ^\omega\omega$ tal que $B \subseteq \set{f \in ^\omega\omega : f\leq^* g_B}$, assim, obtemos que 
+    $$\bigcup A \subseteq \bigcup_{B\in A}\set{f \in ^\omega\omega : f\leq^* g_B}$$
+
+    Notemos, agora, que $|\set{g_B\in ^\omega\omega : B\in A}| = |A| = \add(\mathcal K_\sigma)$. Dessa forma, basta mostrar que o conjunto das $g_B$ são unbounded. Suponham que sejam bounded, então, poderíamos escrever, para $g$ que limitante de todas $g_B$: 
+    $$\bigcup A \subseteq \set{f \in ^\omega\omega : f\leq^* g} $$
+
+    E, portanto, $\bigcup A \in \mathcal K_\sigma$, absurdo. Concluímos, então, que $\add(\mathcal K_\sigma) \leq \non(\mathcal K_\sigma) \leq \frakb$ e que $\frakb \leq \add(\mathcal K_\sigma)$, logo, seguem as igualdades desejada.
 \end{proof}
 
 Lembrando que $^\omega\omega$ é homeomorfo, via expansões de frações contínuas, para o espaço de números irracionais com a topologia de subespaço de $\R$, vemos que o teorema continua válido se interpretarmos $\mathcal K_\sigma$ como o $\sigma$-ideal gerado pelos compactos de $\R\setminus \Q$. 
